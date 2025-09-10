@@ -308,6 +308,8 @@ header.sticky{
     margin-bottom: 1.1rem;
 }
 
+
+
 .in-text{
     display:flex;
     align-items: center;
@@ -349,11 +351,17 @@ header.sticky{
     position: absolute;
     top: 30px;
     left: 35px;
+    transition: all.50s ease;
 }
 
 .top-icon i{
     font-size: 22px;
     color:var(--main-color);
+    
+}
+.row .top-icon i:hover
+{
+    transform: scale(1.1);
 }
 
 .row-btn
