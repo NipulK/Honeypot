@@ -63,7 +63,7 @@ header{
     color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 600;
-    margin: 0 30px;
+    margin: 0 25px;
     transition: all .50s ,ease;
 }
 
@@ -551,8 +551,12 @@ header.sticky{
         right: 0;
     }
     .navlist li {
+        margin: 20px 0;     
+    }
+    .navlist a.OC {
         margin: 20px 0;
     }
+
     #menu-icon {
         display: block;
     }
