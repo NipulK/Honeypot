@@ -198,6 +198,12 @@ header.sticky{
     padding: 43px 43px 43px 43px;
     background: var(--other-color);
     border-radius: 3rem;
+    transition: all  .50s  ease; 
+}
+
+.container-box:hover{
+    box-decoration-break: #ff9f0d 0px 1px 25px;
+    transform: scale(1.1) translatez(12px);
 }
 
 .container-box img{
@@ -224,6 +230,7 @@ header.sticky{
     color: #ff9f0d;
     transform: scale(1.1) translatez(12px);
 }
+
 .about
 {
     display: grid;
@@ -312,6 +319,12 @@ header.sticky{
     color: var(--main-color);
     font-weight: 600;
 }
+
+.in-text .price h6:hover{
+    transform: scale(1.1);
+    transition: all.50s ease;
+}
+
 
 .in-text .s-btn a{
     display: inline-block;
