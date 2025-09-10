@@ -553,7 +553,7 @@ header.sticky{
     .navlist li {
         margin: 20px 0;
     }
-    .menu-icon {
+    #menu-icon {
         display: block;
     }
     .nav-icons {
