@@ -297,8 +297,13 @@ header.sticky{
 
 .row h3{
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: 700;
+}
+.row h3:hover{
+     transform: scale(1.1);
+     transition: all.50s ease;
+    
 }
 
 .row p{
@@ -306,6 +311,11 @@ header.sticky{
     font-size: var(--p-font);
     line-height: 30px;
     margin-bottom: 1.1rem;
+}
+
+.row p:hover{
+    color: var(--main-color);
+    transition: all.50s ease;
 }
 
 
