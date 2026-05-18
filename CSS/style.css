@@ -15,6 +15,10 @@
     --other-color: #212121;
     --second-color: #9e9e9e;
     --bg-color: #111111;
+    --glass-bg: rgba(20, 20, 20, 0.68);
+    --glass-bg-strong: rgba(20, 20, 20, 0.88);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
 
     --big-font: 4.5rem;
     --h2-font: 2.6rem;
@@ -29,24 +33,32 @@ body{
 
 header{
     position: fixed;
-    width: 100%;
-    top: 0;
-    right: 0;
+    width: min(1200px, calc(100% - 8%));
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: transparent;
-    padding: 30px 14%;
-    transition: all 50s ease;
+    gap: 2rem;
+    padding: 14px 20px;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition: all .35s ease;
 }
 
 .logo{
     display: flex;
     align-items: center;
     color: var(--text-color);
-    font-size: 33px;
+    font-size: 28px;
     font-weight: 700;
+    letter-spacing: .2px;
 }
 
 .logo i{
@@ -57,22 +69,27 @@ header{
 
 .navlist{
     display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .navlist a{
     color: var(--text-color);
-    font-size: var(--p-font);
-    font-weight: 600;
-    margin: 0 25px;
-    transition: all .50s ,ease;
+    font-size: 0.98rem;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 999px;
+    transition: all .3s ease;
 }
 
 .navlist a:hover{
     color: var(--main-color);
+    background: rgba(255, 159, 13, 0.1);
 }
 
 .navlist a.active{
     color: var(--main-color);
+    background: rgba(255, 159, 13, 0.14);
 }
 
 
@@ -80,35 +97,43 @@ header{
 {
     display: flex;
     align-items: center;
-    padding: 8px 15px;
-    background-color: #ff9f0d;
+    gap: 4px;
+    padding: 6px;
+    background-color: var(--main-color);
     border-radius: 3rem;
-    box-shadow: #ff9f0d 0px 1px 25px;
+    box-shadow: 0 10px 28px rgba(255, 159, 13, 0.32);
 }
 
 .nav-icons i
 {
    vertical-align: middle;
-   font-size: 25px;
+   font-size: 22px;
    color: var(--bg-color);
-   margin-right: 8px;
-   margin-left: 5px;
-   transition: all .50s ease;
+   width: 38px;
+   height: 38px;
+   display: grid;
+   place-items: center;
+   border-radius: 50%;
+   transition: all .3s ease;
 }
 
 #menu-icon
 {
-    font-size: 32px;
+    font-size: 28px;
     color: var(--bg-color);
     z-index: 10001;
     cursor: pointer;
     display: none;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 50%;
 }
 
 .nav-icons i:hover
 {
-    transform: scale(1.1);
-    color: var(--text-color);
+    transform: translateY(-1px);
+    background: rgba(17, 17, 17, 0.12);
 }
 
 section{
@@ -182,8 +207,9 @@ section{
 }
 
 header.sticky{
-    padding: 12px 14%;
-    background: var(--other-color);
+    top: 12px;
+    background: var(--glass-bg-strong);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
 }
 
 .container{
@@ -505,11 +531,12 @@ header.sticky{
 
 @media (max-width:1545px) {
     header{
-        padding: 22px 4%;
+        width: calc(100% - 8%);
+        padding: 14px 18px;
         transition: .2s;
     }
     header.sticky{
-        padding: 14px 4%;
+        padding: 12px 18px;
         transition: .2s;
     }
     section{
@@ -524,7 +551,8 @@ header.sticky{
 /* Mobile Responsive Styles */
 @media (max-width: 900px) {
     header {
-        padding: 18px 5%;
+        width: calc(100% - 10%);
+        padding: 12px 16px;
     }
     .home {
         grid-template-columns: 1fr;
@@ -546,40 +574,56 @@ header.sticky{
 
 @media (max-width: 768px) {
     header {
-        padding: 12px 3%;
+        top: 12px;
+        width: calc(100% - 6%);
+        padding: 10px 12px;
+        border-radius: 24px;
     }
     .logo {
         font-size: 24px;
     }
     .navlist {
         position: fixed;
-        top: 70px;
-        right: -100%;
-        width: 200px;
-        height: 100vh;
-        background: var(--other-color);
+        top: 78px;
+        right: 3%;
+        width: min(320px, calc(100vw - 6%));
+        height: auto;
+        background: var(--glass-bg-strong);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        box-shadow: var(--glass-shadow);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         justify-content: flex-start;
-        padding: 40px 20px;
-        transition: right 0.3s ease;
+        gap: 8px;
+        padding: 14px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+        transition: all 0.3s ease;
         z-index: 9999;
     }
     .navlist.active {
-        right: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
     .navlist li {
-        margin: 20px 0;     
+        margin: 0;     
     }
     .navlist a.OC {
-        margin: 20px 0;
+        display: block;
+        margin: 0;
+        padding: 13px 16px;
     }
 
     #menu-icon {
-        display: block;
+        display: grid;
     }
     .nav-icons {
-        padding: 8px 10px;
+        padding: 6px;
     }
 }
 

@@ -3,9 +3,12 @@ const menuIcon = document.getElementById("menu-icon");
 const navList = document.querySelector(".navlist");
 const navLinks = document.querySelectorAll('.navlist a');
 
-window.addEventListener("scroll", function() {
-    header.classList.toggle("stricky", window.scrollY > 50);
-});
+function syncHeaderState() {
+    header.classList.toggle("sticky", window.scrollY > 50);
+}
+
+window.addEventListener("scroll", syncHeaderState);
+syncHeaderState();
 
 // Toggle navlist on mobile
 menuIcon.addEventListener('click', function() {
