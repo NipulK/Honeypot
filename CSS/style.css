@@ -5,7 +5,10 @@
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+}
+
+html{
+    scroll-padding-top: 92px;
 }
 
 :root{
@@ -214,7 +217,7 @@ section{
 
 .hero-badge,
 .section-heading span,
-.about-text span,
+.about-text > span,
 .middle-text h4{
     display: inline-block;
     margin-bottom: 18px;
@@ -380,9 +383,13 @@ section{
 
 .about{
     display: grid;
-    grid-template-columns: minmax(320px, .9fr) minmax(360px, 1.1fr);
+    grid-template-columns: minmax(340px, 1fr) minmax(320px, .9fr);
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
+    min-height: calc(100vh - 92px);
+    padding-top: 46px;
+    padding-bottom: 56px;
+    scroll-margin-top: 92px;
 }
 
 .about-flower{
@@ -394,14 +401,46 @@ section{
 
 .about-img img{
     width: 100%;
+    max-width: 520px;
     display: block;
+    margin-left: auto;
     filter: drop-shadow(0 20px 32px rgba(102, 62, 33, .12));
 }
 
 .about-text p{
-    margin-top: 20px;
+    max-width: 650px;
+    margin-top: 18px;
     color: var(--muted);
-    line-height: 1.9;
+    line-height: 1.75;
+}
+
+.about-highlights{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.about-highlights div{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 253, 249, .82);
+    box-shadow: 0 10px 24px rgba(101, 68, 47, .06);
+}
+
+.about-highlights i{
+    color: var(--main-color);
+    font-size: 1.05rem;
+}
+
+.about-highlights span{
+    color: var(--ink);
+    font-size: .9rem;
+    font-weight: 600;
 }
 
 .about-text .btn{
@@ -625,6 +664,23 @@ section{
     .about,
     .contact-content{
         grid-template-columns: 1fr;
+    }
+
+    .about{
+        min-height: auto;
+        text-align: center;
+    }
+
+    .about-text p{
+        margin-inline: auto;
+    }
+
+    .about-highlights{
+        justify-content: center;
+    }
+
+    .about-img img{
+        margin-inline: auto;
     }
 
     .home{
