@@ -179,6 +179,11 @@ section{
     pointer-events: none;
 }
 
+.section-decor{
+    position: absolute;
+    pointer-events: none;
+}
+
 .hero-branch{
     left: -38px;
     bottom: 12%;
@@ -383,32 +388,36 @@ section{
 
 .about{
     display: grid;
-    grid-template-columns: minmax(340px, 1fr) minmax(320px, .9fr);
+    grid-template-columns: minmax(330px, .9fr) minmax(420px, 1.1fr);
     align-items: center;
-    gap: 3rem;
+    gap: 3.5rem;
     min-height: calc(100vh - 92px);
-    padding-top: 46px;
-    padding-bottom: 56px;
+    padding-top: 30px;
+    padding-bottom: 42px;
     scroll-margin-top: 92px;
 }
 
 .about-flower{
-    right: -8px;
-    bottom: 0;
-    width: 160px;
-    opacity: .88;
+    left: 7%;
+    bottom: 13%;
+    width: 130px;
+    opacity: .72;
 }
 
 .about-img img{
     width: 100%;
-    max-width: 520px;
+    max-width: 470px;
     display: block;
-    margin-left: auto;
+    margin-inline: auto;
     filter: drop-shadow(0 20px 32px rgba(102, 62, 33, .12));
 }
 
+.about-text{
+    max-width: 680px;
+}
+
 .about-text p{
-    max-width: 650px;
+    max-width: 620px;
     margin-top: 18px;
     color: var(--muted);
     line-height: 1.75;
@@ -669,6 +678,8 @@ section{
     .about{
         min-height: auto;
         text-align: center;
+        gap: 2rem;
+        padding-top: 50px;
     }
 
     .about-text p{
