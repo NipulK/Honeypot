@@ -462,23 +462,43 @@ section{
     text-align: center;
 }
 
+.shop{
+    min-height: calc(100vh - 92px);
+    padding-top: 54px;
+    padding-bottom: 64px;
+    scroll-margin-top: 92px;
+}
+
+.shop .middle-text{
+    margin-bottom: 26px;
+}
+
+.shop .middle-text h2{
+    font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
 .shop-content{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1120px;
+    margin: 0 auto;
 }
 
 .row{
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 22px;
+    padding: 20px;
+    min-height: 365px;
+    text-align: left;
 }
 
 .row img{
     width: 100%;
-    height: auto;
-    margin-bottom: 16px;
+    height: 112px;
+    object-fit: contain;
+    margin-bottom: 14px;
     transition: transform .25s ease;
 }
 
@@ -489,14 +509,24 @@ section{
 .row h3{
     margin-bottom: 10px;
     color: var(--ink);
-    font-size: 1.08rem;
+    font-size: 1.04rem;
+    line-height: 1.25;
+    min-height: 2.6em;
 }
 
 .row p{
     flex: 1;
     color: var(--muted);
-    font-size: .94rem;
-    line-height: 1.8;
+    font-size: .88rem;
+    line-height: 1.6;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.row br{
+    display: none;
 }
 
 .in-text{
@@ -504,7 +534,8 @@ section{
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    margin-top: 18px;
+    margin-top: auto;
+    padding-top: 18px;
 }
 
 .price h6{
@@ -514,7 +545,7 @@ section{
 
 .s-btn a{
     display: inline-flex;
-    padding: 10px 15px;
+    padding: 9px 14px;
     border-radius: 999px;
     color: var(--ink);
     background: rgba(243,179,62,.18);
@@ -534,7 +565,7 @@ section{
 }
 
 .row-btn{
-    margin-top: 36px;
+    margin-top: 28px;
     text-align: center;
 }
 
